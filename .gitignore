@@ -1,5 +1,7 @@
 # Compiled binaries and test artifacts
 bin/
+.tools/
+.cache/
 *.exe
 *.test
 *.out
