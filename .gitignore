@@ -1,0 +1,14 @@
+# Compiled binaries and test artifacts
+bin/
+*.exe
+*.test
+*.out
+
+# Local configuration
+.env
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package services.v1;
+
+option go_package = "github.com/SiddarthVuppunahalli/CMPE273-Module-3-Assignment/gen/services/v1;servicesv1";
+
+// InventoryService reports whether an item can satisfy a requested quantity.
+service InventoryService {
+  rpc CheckInventory(CheckInventoryRequest) returns (CheckInventoryResponse);
+}
+
+// OrderService accepts orders and checks their availability with InventoryService.
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message CheckInventoryRequest {
+  string item_id = 1;
+  int32 quantity = 2;
+}
+
+message CheckInventoryResponse {
+  string item_id = 1;
+  int32 requested_quantity = 2;
+  int32 available_quantity = 3;
+  bool available = 4;
+}
+
+message CreateOrderRequest {
+  string item_id = 1;
+  int32 quantity = 2;
+}
+
+message CreateOrderResponse {
+  string status = 1;
+  string item_id = 2;
+  int32 quantity = 3;
+}
