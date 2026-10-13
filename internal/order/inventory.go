@@ -6,6 +6,8 @@ import (
 )
 
 var (
+	ErrInvalidItemID         = errors.New("item_id is required")
+	ErrInvalidQuantity       = errors.New("quantity must be greater than zero")
 	ErrItemNotFound          = errors.New("item not found")
 	ErrInsufficientInventory = errors.New("insufficient inventory")
 	ErrInventoryTimeout      = errors.New("inventory request timed out")
